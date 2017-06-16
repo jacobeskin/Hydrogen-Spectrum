@@ -1,0 +1,115 @@
+This program calculates the spectrum of the Hydrogen atom using the simple
+bisection method, i.e. it calculates the values of E for which the radial
+wavefunction goes to zero far from the origin. Second derivative in the
+Schrödinger equation is evaluated with the finite difference method leading
+to a recursion relation which is used when calculating the value the radial
+equation from origin onwards. The iteration of the radial solution is separated
+into its own subroutine. During runtime, values for principal quantum number
+n, orbital quantum number l and E-E_0, where E_0 is the ground state, are
+printed to the screen. Two files are also written, 'Energylevels' which pretty
+much record what is printed on the screen and 'Energylevelsminus' that has
+the same data except the zero potential is set at 0-E_0.
+
+Compilation and running:
+
+$ gfortran -Wall -g -o SE_H_bisectio.exe SE_H_bisectio.f90
+$ ./SE_H_bisectio.exe
+
+Results printed out on the screen read:
+
+ n=            1
+ E=   1.0989994159160688E-007 l=           0
+ n=            2
+ E=   10.204268952754774      l=           0
+ E=   10.204268974738833      l=           1
+ n=            3
+ E=   12.093948373355916      l=           0
+ E=   12.093948376144739      l=           1
+ E=   12.093948373715772      l=           2
+ n=            4
+ E=   12.755336176188447      l=           0
+ E=   12.755336168432480      l=           1
+ E=   12.755336180253840      l=           2
+ E=   12.755336170418168      l=           3
+ n=            5
+ E=   13.061464251469944      l=           0
+ E=   13.061464238472031      l=           1
+ E=   13.061464240349926      l=           2
+ E=   13.061464235893997      l=           3
+ E=   13.061464250249740      l=           4
+ n=            6
+ E=   13.227756026431672      l=           0
+ E=   13.227756023183964      l=           1
+ E=   13.227756026286627      l=           2
+ E=   13.227756019142701      l=           3
+ E=   13.227756015338191      l=           4
+ E=   13.227756032375320      l=           5
+ n=            7
+ E=   13.328024736509201      l=           0
+ E=   13.328024727586435      l=           1
+ E=   13.328024738057515      l=           2
+ E=   13.328024738873829      l=           3
+ E=   13.328024742065152      l=           4
+ E=   13.328024725545184      l=           5
+ E=   13.328024708528547      l=           6
+ n=            8
+ E=   13.393119068072570      l=           0
+ E=   13.393116897390168      l=           1
+ E=   13.393113340309478      l=           2
+ E=   13.393109497765352      l=           3
+ E=   13.393106306815572      l=           4
+ E=   13.393104282022465      l=           5
+ E=   13.393103295205918      l=           6
+ E=   13.393103050011774      l=           7
+ n=            9
+ E=   13.438889355301294      l=           0
+ E=   13.438790671061044      l=           1
+ E=   13.438612328272479      l=           2
+ E=   13.438388247438743      l=           3
+ E=   13.438159575101697      l=           4
+ E=   13.437964753309496      l=           5
+ E=   13.437828352655369      l=           6
+ E=   13.437754014972558      l=           7
+ E=   13.437725910577447      l=           8
+ n=           10
+ E=   13.481366196934479      l=           0
+ E=   13.480780968398248      l=           1
+ E=   13.479666303687464      l=           2
+ E=   13.478130269298516      l=           3
+ E=   13.476325915793200      l=           4
+ E=   13.474440577434885      l=           5
+ E=   13.472679388624540      l=           6
+ E=   13.471238299204403      l=           7
+ E=   13.470259202931818      l=           8
+ E=   13.469768591250237      l=           9
+ n=           11
+ E=   13.533468639645097      l=           0
+ E=   13.532144450067893      l=           1
+ E=   13.529578938232152      l=           2
+ E=   13.525930342964166      l=           3
+ E=   13.521419732970152      l=           4
+ E=   13.516318062854138      l=           5
+ E=   13.510937041104723      l=           6
+ E=   13.505627374776918      l=           7
+ E=   13.500784718509257      l=           8
+ E=   13.496853288338746      l=           9
+ E=   13.494275103479218      l=          10
+ n=           12
+ E=   13.596735966745671      l=           0
+ E=   13.594584942913997      l=           1
+ E=   13.590405671169373      l=           2
+ E=   13.584425874663525      l=           3
+ E=   13.576949262386099      l=           4
+ E=   13.568325301286642      l=           5
+ E=   13.558925893701202      l=           6
+ E=   13.549133483463786      l=           7
+ E=   13.587765207649923      l=           8
+ E=   13.573226024187925      l=           9
+ E=   13.559092110102366      l=          10
+ E=   13.545798819022368      l=          11
+ n=           13
+ Elapsed time:    28.192866666666664
+
+where E the defference of the enenrgylevel and ground state.
+
+This is an old old code, written as practice, and very slow.
